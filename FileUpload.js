@@ -9,8 +9,8 @@ const app = express()
 const port = 3000
 
 const s3 = new AWS.S3({
-    accessKeyId: 'AKIAUKXFWT56IZI7RBUR',
-    secretAccessKey: '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',
+    accessKeyId: '<accessKeyId>',
+    secretAccessKey: '<secretAccessKey>',
     region: 'eu-central-1',
     httpOptions: {
         timeout: 900000,
@@ -31,7 +31,7 @@ app.post('/upload',upload,(req, res) => {
     const fileType = myFile[myFile.length - 1]
     console.log(myFile)
     const params = {
-        Bucket: 'yarininsuyu.com',
+        Bucket: '<bucket>',
         Key: `${uuid()}.${fileType}`,
         Body: req.file.buffer
     }
